@@ -38,7 +38,7 @@ func main() {
 func processFiles(files []string) error {
 	buffers := NewBufferPool()
 
-	out := make(chan *bytes.Buffer, 100)
+	out := make(chan *bytes.Buffer)
 	var writer sync.WaitGroup
 	writer.Add(1)
 	go func() {
